@@ -1,4 +1,4 @@
-package com.example.catattokomvvm
+package com.example.catattokomvvm.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.LiveData

@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 import androidx.lifecycle.ViewModelProvider
-import com.example.catattokomvvm.GoodsViewModel
+import com.example.catattokomvvm.viewmodel.GoodsViewModel
 
 import com.example.catattokomvvm.data.local.room.GoodsDatabase
 import com.example.catattokomvvm.databinding.ActivityEditHistoryBinding
@@ -21,7 +21,6 @@ import com.example.catattokomvvm.model.GoodsEntity
 
 class EditHistoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditHistoryBinding
-    private lateinit var goodsDatabase: GoodsDatabase
     private lateinit var goodsViewModel: GoodsViewModel
 
 

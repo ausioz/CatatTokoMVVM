@@ -24,7 +24,7 @@
         android:layout_marginBottom="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_nama"
+            android:id="@+id/et_nik"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="NIK Pencatat"
@@ -39,7 +39,7 @@
         android:layout_marginBottom="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_nik"
+            android:id="@+id/et_nama"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Nama Pencatat"

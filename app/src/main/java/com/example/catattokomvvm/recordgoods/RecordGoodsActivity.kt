@@ -8,15 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.catattokomvvm.data.local.room.GoodsDatabase
 import com.example.catattokomvvm.databinding.ActivityRecordGoodsBinding
 import androidx.lifecycle.ViewModelProvider
-import com.example.catattokomvvm.GoodsViewModel
+import com.example.catattokomvvm.viewmodel.GoodsViewModel
 import com.example.catattokomvvm.di.ViewModelFactory
+import com.example.catattokomvvm.login.LoginActivity
 import com.example.catattokomvvm.model.GoodsEntity
+import com.example.catattokomvvm.viewmodel.LoginViewModel
 
 
 class RecordGoodsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecordGoodsBinding
-    private lateinit var goodsDatabase: GoodsDatabase
     private lateinit var goodsViewModel: GoodsViewModel
+    private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +29,20 @@ class RecordGoodsActivity : AppCompatActivity() {
             ViewModelProvider(this, ViewModelFactory(application))[GoodsViewModel::class.java]
 //        goodsDatabase = GoodsDatabase.getInstance(this)
 
+        loginViewModel = ViewModelProvider(this,ViewModelFactory(application))[LoginViewModel::class.java]
+
         binding.btRecord.setOnClickListener {
             recordGoods()
         }
+
+        loginViewModel.userName.observe(this) {
+            binding.etNama.setText(loginViewModel.userName.value)
+        }
+        loginViewModel.nik.observe(this) {
+            binding.etNik.setText(loginViewModel.nik.value)
+        }
+
+
     }
 
     private fun recordGoods() {
