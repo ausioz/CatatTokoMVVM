@@ -14,19 +14,19 @@
         android:theme="@style/Theme.CatatTokoMVVM"
         tools:targetApi="31">
         <activity
-            android:name=".historygoods.edithistory.EditHistoryActivity"
+            android:name=".ui.goods.historygoods.edithistory.EditHistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".historygoods.HistoryActivity"
+            android:name=".ui.goods.historygoods.HistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".historygoods.HistoryActivityBasic"
+            android:name=".ui.goods.historygoods.HistoryActivityBasic"
             android:exported="false" />
         <activity
-            android:name=".recordgoods.RecordGoodsActivity"
+            android:name=".ui.goods.recordgoods.RecordGoodsActivity"
             android:exported="false" />
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false"/>
     </application>
 

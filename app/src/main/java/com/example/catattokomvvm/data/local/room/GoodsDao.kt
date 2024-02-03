@@ -9,7 +9,7 @@ import androidx.room.Query
 import androidx.room.RawQuery
 import androidx.room.Update
 import androidx.sqlite.db.SimpleSQLiteQuery
-import com.example.catattokomvvm.model.GoodsEntity
+import com.example.catattokomvvm.data.local.room.model.GoodsEntity
 
 @Dao
 interface GoodsDao {
@@ -21,7 +21,7 @@ interface GoodsDao {
     fun insertRecord(goods: GoodsEntity)
 
     @Update
-    fun updateRecord(goods:GoodsEntity)
+    fun updateRecord(goods: GoodsEntity)
 
     @Delete
     fun deleteRecord(goods: GoodsEntity)

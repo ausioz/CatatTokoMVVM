@@ -1,7 +1,8 @@
-package com.example.catattokomvvm.domain.repository
+package com.example.catattokomvvm.repository
 
 import android.app.Application
 import android.widget.Toast
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -13,13 +14,15 @@ class LoginAuthRepo(private val application: Application) {
 //    firebase and firestore data
 //    user1 = adi@catattoko.com ; pass = 123456 ; role = admin
 //    user2 = budi@catattoko.com ; pass = 123456 ; role = admin
-//    user3 = adi@catattoko.com ; pass = 123456 ; role = basic
+//    user3 = candra@catattoko.com ; pass = 123456 ; role = basic
 
     val firebaseUserMutableLiveData: MutableLiveData<FirebaseUser?> = MutableLiveData()
     val userLoggedMutableLiveData: MutableLiveData<Boolean> = MutableLiveData()
     val userRoleMutableLiveData: MutableLiveData<String> = MutableLiveData()
     val userNameMutableLiveData: MutableLiveData<String> = MutableLiveData()
     val nikMutableLiveData: MutableLiveData<String> = MutableLiveData()
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val fStore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
@@ -43,12 +46,15 @@ class LoginAuthRepo(private val application: Application) {
     }
 
     fun login(email: String?, pass: String?) {
+        _isLoading.value = true
         auth.signInWithEmailAndPassword(email!!, pass!!).addOnCompleteListener { task ->
             if (task.isSuccessful) {
+                _isLoading.value = false
                 firebaseUserMutableLiveData.postValue(auth.currentUser)
                 checkUserRole(task.result.user?.uid)
 
             } else {
+                _isLoading.value = false
                 Toast.makeText(
                     application,
                     "Login Error: Invalid mail and/or password",
@@ -60,10 +66,11 @@ class LoginAuthRepo(private val application: Application) {
 
 
     private fun checkUserRole(uid: String?) {
+        _isLoading.value = true
         val documentReference = fStore.collection("users").document(uid!!)
 
         documentReference.get().addOnSuccessListener {
-//            Toast.makeText(application, it.getString("role")!!, Toast.LENGTH_SHORT).show()
+            _isLoading.value = false
             if (it.getString("role") == "admin") {
                 userRoleMutableLiveData.postValue("admin")
             } else {
@@ -74,6 +81,7 @@ class LoginAuthRepo(private val application: Application) {
 
         }
         documentReference.get().addOnFailureListener {
+            _isLoading.value = false
             Toast.makeText(application, "Role Error", Toast.LENGTH_SHORT).show()
         }
     }

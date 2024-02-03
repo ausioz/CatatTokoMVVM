@@ -1,15 +1,10 @@
-package com.example.catattokomvvm.historygoods
+package com.example.catattokomvvm.ui.goods.historygoods
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.catattokomvvm.databinding.ItemHistoryBasicBinding
-import com.example.catattokomvvm.databinding.ItemHistoryBinding
-import com.example.catattokomvvm.historygoods.edithistory.EditHistoryActivity
-import com.example.catattokomvvm.model.GoodsEntity
+import com.example.catattokomvvm.data.local.room.model.GoodsEntity
 
 class HistoryAdapterBasic: RecyclerView.Adapter<HistoryAdapterBasic.ViewHolder>() {
     private val goods = arrayListOf<GoodsEntity>()

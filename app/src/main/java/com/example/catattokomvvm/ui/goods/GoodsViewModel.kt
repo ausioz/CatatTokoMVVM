@@ -1,11 +1,11 @@
-package com.example.catattokomvvm.viewmodel
+package com.example.catattokomvvm.ui.goods
 
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.catattokomvvm.data.local.room.GoodsDatabase
-import com.example.catattokomvvm.model.GoodsEntity
+import com.example.catattokomvvm.data.local.room.model.GoodsEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -31,5 +31,9 @@ class GoodsViewModel(var application: Application) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             db.goodsDao().deleteRecord(goods)
         }
+    }
+
+    fun getDateRecord():List<String> {
+        return db.goodsDao().getDateByOrder().toList()
     }
 }

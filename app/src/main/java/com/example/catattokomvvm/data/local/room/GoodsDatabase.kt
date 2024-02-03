@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.catattokomvvm.model.GoodsEntity
+import com.example.catattokomvvm.data.local.room.model.GoodsEntity
 
 @Database(
     entities =[GoodsEntity::class],

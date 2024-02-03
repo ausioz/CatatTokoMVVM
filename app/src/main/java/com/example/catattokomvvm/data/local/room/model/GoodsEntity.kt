@@ -1,4 +1,4 @@
-package com.example.catattokomvvm.model
+package com.example.catattokomvvm.data.local.room.model
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
@@ -10,7 +10,6 @@ import kotlinx.android.parcel.Parcelize
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.time.LocalDate
-
 
 @Entity(tableName = "goods")
 @Parcelize

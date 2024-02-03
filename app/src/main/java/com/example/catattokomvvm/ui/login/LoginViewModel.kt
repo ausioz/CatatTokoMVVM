@@ -1,9 +1,10 @@
-package com.example.catattokomvvm.viewmodel
+package com.example.catattokomvvm.ui.login
 
 import android.app.Application
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.catattokomvvm.domain.repository.LoginAuthRepo
+import com.example.catattokomvvm.repository.LoginAuthRepo
 import com.google.firebase.auth.FirebaseUser
 
 
@@ -13,6 +14,7 @@ class LoginViewModel(application: Application):ViewModel() {
     private val userData = repository.firebaseUserMutableLiveData
     private val loggedStatus = repository.userLoggedMutableLiveData
     private val userRole = repository.userRoleMutableLiveData
+    val isLoading = repository.isLoading
     val userName = repository.userNameMutableLiveData
     val nik = repository.nikMutableLiveData
 

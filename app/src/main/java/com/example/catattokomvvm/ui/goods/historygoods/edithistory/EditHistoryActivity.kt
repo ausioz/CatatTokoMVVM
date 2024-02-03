@@ -1,4 +1,4 @@
-package com.example.catattokomvvm.historygoods.edithistory
+package com.example.catattokomvvm.ui.goods.historygoods.edithistory
 
 import android.content.Intent
 
@@ -11,13 +11,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 import androidx.lifecycle.ViewModelProvider
-import com.example.catattokomvvm.viewmodel.GoodsViewModel
+import com.example.catattokomvvm.ui.goods.GoodsViewModel
 
-import com.example.catattokomvvm.data.local.room.GoodsDatabase
 import com.example.catattokomvvm.databinding.ActivityEditHistoryBinding
-import com.example.catattokomvvm.di.ViewModelFactory
+import com.example.catattokomvvm.ui.ViewModelFactory
 
-import com.example.catattokomvvm.model.GoodsEntity
+import com.example.catattokomvvm.data.local.room.model.GoodsEntity
 
 class EditHistoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditHistoryBinding

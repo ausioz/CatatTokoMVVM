@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".recordgoods.RecordGoodsActivity">
+    tools:context=".ui.goods.recordgoods.RecordGoodsActivity">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_Title"
@@ -15,23 +15,6 @@
         android:text="Edit Catat Barang"
         android:textColor="@color/teal_700"
         android:textSize="40sp" />
-
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        style="@style/MyTextInputLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginHorizontal="30dp"-->
-<!--        android:layout_marginBottom="20dp">-->
-
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:id="@+id/et_id"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:hint="Id Catatan"-->
-<!--            android:textColor="@color/teal_700"-->
-<!--            android:editable="false"-->
-<!--            tools:ignore="Deprecated" />-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/MyTextInputLayout"

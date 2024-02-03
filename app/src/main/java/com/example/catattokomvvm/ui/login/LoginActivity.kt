@@ -1,4 +1,4 @@
-package com.example.catattokomvvm.login
+package com.example.catattokomvvm.ui.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,11 +6,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.catattokomvvm.MainActivity
+import com.example.catattokomvvm.ui.MainActivity
 import com.example.catattokomvvm.databinding.ActivityLoginBinding
-import com.example.catattokomvvm.di.ViewModelFactory
-import com.example.catattokomvvm.viewmodel.LoginViewModel
-
+import com.example.catattokomvvm.ui.ViewModelFactory
 
 
 class LoginActivity : AppCompatActivity() {
